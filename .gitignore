@@ -2,3 +2,6 @@
 .env
 __py_cache__
 .vscode
+tmp/*
+!.gitkeep
+

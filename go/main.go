@@ -1,7 +1,7 @@
 package main
 
 func main() {
-	RunQuicksort()
+	// RunQuicksort()
 	// RunBubbleSort()
 	// RunCanConstruct()
 	// RunJumpGame2()
