@@ -1,6 +1,13 @@
 package main
 
+import (
+	"github.com/sifatulrabbi/problem-solving/go/linked_list"
+)
+
 func main() {
+	linked_list.Insertion()
+	// linked_list.ConvertLinkedListToArray()
+	// run_binary_search()
 	// RunQuicksort()
 	// RunBubbleSort()
 	// RunCanConstruct()
