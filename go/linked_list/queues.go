@@ -33,8 +33,8 @@ type Node[T comparable] struct {
 
 type Queue[T comparable] struct {
 	Length int
-	Head   *Node[T]
-	Tail   *Node[T]
+	head   *Node[T]
+	tail   *Node[T]
 }
 
 func (q *Queue[T]) Enqueue(item T) {
@@ -42,36 +42,35 @@ func (q *Queue[T]) Enqueue(item T) {
 		Val:  item,
 		Next: nil,
 	}
-
 	if q.Length == 0 {
 		// when the queue length is 0 its empty.
-		q.Head = &n
-		q.Tail = &n
-		q.Length++
-		return
+		q.head = &n
+		q.tail = &n
+	} else if q.head.Next == nil {
+		q.head.Next = &n
+		q.tail = &n
+	} else {
+		q.tail.Next = &n
+		q.tail = &n
 	}
-
-	q.Tail.Next = &n
-	q.Tail = &n
 	q.Length++
 }
 
 func (q *Queue[T]) Dequeue() (T, bool) {
-	if q.Head == nil {
+	if q.head == nil {
 		var n T
 		return n, false
 	}
-
-	head := q.Head
-	q.Head = head.Next
+	head := q.head
+	q.head = head.Next
 	q.Length--
-	return head.Val, false
+	return head.Val, true
 }
 
 func (q *Queue[T]) Peek() (T, bool) {
 	var val T
-	if q.Head != nil {
-		return q.Head.Val, true
+	if q.head != nil {
+		return q.head.Val, true
 	}
 	return val, false
 }
