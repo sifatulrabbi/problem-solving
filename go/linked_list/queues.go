@@ -5,27 +5,6 @@ import (
 	"log"
 )
 
-func RunTestQueue() {
-	arr := []int{31, 24, 32, 16, 23, 15, 35, 27, 32}
-	q := BuildQueueFromArr[int](arr)
-
-	fmt.Println(arr)
-	fmt.Println("Getting the first value from the queue which should be 31")
-	if v, exists := q.Dequeue(); !exists {
-		log.Fatalf("The queue is empty")
-	} else {
-		fmt.Printf("value found: %d. Which matches: %v\n", v, v == 31)
-	}
-
-	fmt.Println("Getting the next value from the queue which should be 24")
-	if v, exists := q.Dequeue(); !exists {
-		log.Fatalf("The queue is empty")
-	} else {
-		fmt.Printf("value found: %d. Which matches: %v\n", v, v == 24)
-	}
-	fmt.Println(ConvertQueueIntoArray[int](q))
-}
-
 type Node[T comparable] struct {
 	Val  T
 	Next *Node[T]
@@ -93,4 +72,25 @@ func BuildQueueFromArr[T comparable](arr []T) Queue[T] {
 		q.Enqueue(v)
 	}
 	return q
+}
+
+func RunTestQueue() {
+	arr := []int{31, 24, 32, 16, 23, 15, 35, 27, 32}
+	q := BuildQueueFromArr[int](arr)
+
+	fmt.Println(arr)
+	fmt.Println("Getting the first value from the queue which should be 31")
+	if v, exists := q.Dequeue(); !exists {
+		log.Fatalf("The queue is empty")
+	} else {
+		fmt.Printf("value found: %d. Which matches: %v\n", v, v == 31)
+	}
+
+	fmt.Println("Getting the next value from the queue which should be 24")
+	if v, exists := q.Dequeue(); !exists {
+		log.Fatalf("The queue is empty")
+	} else {
+		fmt.Printf("value found: %d. Which matches: %v\n", v, v == 24)
+	}
+	fmt.Println(ConvertQueueIntoArray[int](q))
 }
