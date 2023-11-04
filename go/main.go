@@ -5,7 +5,8 @@ import (
 )
 
 func main() {
-	linked_list.Insertion()
+	linked_list.RunTestQueue()
+	// linked_list.Insertion()
 	// linked_list.ConvertLinkedListToArray()
 	// run_binary_search()
 	// RunQuicksort()
