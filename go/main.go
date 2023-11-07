@@ -1,14 +1,18 @@
 package main
 
-import (
-	"github.com/sifatulrabbi/problem-solving/go/linked_list"
-)
-
 func main() {
-	linked_list.RunHasCycle()
+	// if err := tools_scripts.StartWebhook(); err != nil {
+	// 	log.Fatalln(err)
+	// }
+
+	// linked_list.RunHasCycle()
 	// linked_list.RunTestQueue()
 	// linked_list.Insertion()
 	// linked_list.ConvertLinkedListToArray()
+
+	RunInsertDltGetRand()
+	// RunHIndex()
+	// RunMoveZeroes()
 	// run_binary_search()
 	// RunQuicksort()
 	// RunBubbleSort()
