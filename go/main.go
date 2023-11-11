@@ -10,7 +10,8 @@ func main() {
 	// linked_list.Insertion()
 	// linked_list.ConvertLinkedListToArray()
 
-	RunInsertDltGetRand()
+	// RunProductExceptSelf()
+	// RunInsertDltGetRand()
 	// RunHIndex()
 	// RunMoveZeroes()
 	// run_binary_search()
@@ -23,4 +24,6 @@ func main() {
 	// RunRemoveDuplicates2()
 	// RunLengthOfLastWord()
 	// RunTextJustification()
+
+	RunEncodingDecodingStrings()
 }
