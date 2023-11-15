@@ -6,20 +6,20 @@ import (
 )
 
 type Subscription struct {
-	id               string `json:"id"`
-	subscriptionPlan string `json:"subscription_plan"`
+	ID               string `json:"id"`
+	SubscriptionPlan string `json:"subscription_plan"`
 }
 
 type User struct {
-	id           string `json:"id"`
-	username     string `json:"username"`
-	subscription string `json:"subscription"`
+	ID           string `json:"id"`
+	Username     string `json:"username"`
+	Subscription string `json:"subscription"`
 }
 
 type SubscriptionPlan struct {
-	id     string `json:"id"`
-	amount int32  `json:"amount"`
-	name   string `json:"name"`
+	ID     string `json:"id"`
+	Amount int32  `json:"amount"`
+	Name   string `json:"name"`
 }
 
 func (u *User) getById(id string) error {
@@ -43,8 +43,8 @@ func (s *Subscription) update() error {
 }
 
 func (s *Subscription) createNew(sp SubscriptionPlan) error {
-	s.id = "012412"
-	s.subscriptionPlan = sp.id
+	s.ID = "012412"
+	s.SubscriptionPlan = sp.ID
 	return nil
 }
 
@@ -72,7 +72,7 @@ func purchasePlan(userId, planId string) error {
 		return err
 	}
 	// update the user
-	user.subscription = userSub.id
+	user.Subscription = userSub.ID
 	if err := user.update(); err != nil {
 		return err
 	}
