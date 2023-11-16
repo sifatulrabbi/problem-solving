@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"time"
 
-	"problem-solving/go/data"
+	"problem-solving/data"
 )
 
 func RunDoubleFinding() {

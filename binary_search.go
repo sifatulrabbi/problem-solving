@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"problem-solving/go/data"
+	"problem-solving/data"
 )
 
 func run_binary_search() {
