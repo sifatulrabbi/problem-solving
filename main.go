@@ -10,7 +10,7 @@ func main() {
 	// linked_list.Insertion()
 	// linked_list.ConvertLinkedListToArray()
 
-	RunProductExceptSelf()
+	// RunProductExceptSelf()
 	// RunInsertDltGetRand()
 	// RunHIndex()
 	// RunMoveZeroes()
