@@ -25,5 +25,5 @@ func main() {
 	// RunLengthOfLastWord()
 	// RunTextJustification()
 
-	// RunEncodingDecodingStrings()
+	RunEncodingDecodingStrings()
 }
