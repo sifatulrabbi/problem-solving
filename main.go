@@ -1,10 +1,15 @@
 package main
 
+import (
+	"problem-solving/linked_list"
+)
+
 func main() {
 	// if err := tools_scripts.StartWebhook(); err != nil {
 	// 	log.Fatalln(err)
 	// }
 
+	linked_list.RunAddTwoNumbers()
 	// linked_list.RunHasCycle()
 	// linked_list.RunTestQueue()
 	// linked_list.Insertion()
@@ -25,5 +30,6 @@ func main() {
 	// RunLengthOfLastWord()
 	// RunTextJustification()
 
-	RunEncodingDecodingStrings()
+	// RunEncodingDecodingStrings()
+	// tools_scripts.BulkRemoveTogaiCustomers()
 }

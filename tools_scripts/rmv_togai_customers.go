@@ -1,31 +1,28 @@
 package tools_scripts
 
-// func listCustomers() {
-
-// 	url := "https://sandbox-api.togai.com/customers"
-
-// 	req, _ := http.NewRequest("GET", url, nil)
-
-// 	req.Header.Add("Authorization", "<authorization>")
-
-// 	res, _ := http.DefaultClient.Do(req)
-
-// 	defer res.Body.Close()
-// 	body, _ := ioutil.ReadAll(res.Body)
-
-// 	fmt.Println(res)
-// 	fmt.Println(string(body))
-
-// }
+import (
+	"fmt"
+	"net/http"
+	"time"
+)
 
 func BulkRemoveTogaiCustomers() {
-	// ignoreDataset := map[string][]string{
-	// 	"customer_ids": []string{"cus_OXTduR5xMym2X7", ""},
-	// 	"emails":       []string{},
-	// }
-	// list all the customers.
+	customers := []string{}
+	for _, cusId := range customers {
+		removeTogaiCustomer(cusId)
+	}
+}
 
-	// filter required customers.
-
-	// remove not required customers.
+func removeTogaiCustomer(cusId string) {
+	req, err := http.NewRequest(http.MethodDelete, fmt.Sprintf("https://sandbox-api.togai.com/accounts/%s", cusId), http.NoBody)
+	if err != nil {
+		panic(err)
+	}
+	req.Header.Add("Authorization", "Bearer ")
+	res, err := http.DefaultClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(res.StatusCode)
+	time.Sleep(time.Second * 2)
 }
