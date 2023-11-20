@@ -1,10 +1,10 @@
 package linked_list
 
 import (
-	"errors"
 	"fmt"
 	"math/big"
 	"strconv"
+	"strings"
 )
 
 type ListNode struct {
@@ -32,6 +32,7 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	resultNum := new(big.Int)
 	resultNum = resultNum.Add(num1, num2)
 	sumStr := resultNum.Text(10)
+	fmt.Println(num1, num2, sumStr)
 	l := len(sumStr)
 
 	lastNum, _ := strconv.ParseInt(string(sumStr[l-1]), 10, 32)
@@ -54,16 +55,13 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 
 func convertListNodeToNum(l *ListNode) *big.Int {
 	n := new(big.Int)
-	val := ""
+	arr := []string{}
 	current := l
 	for current != nil {
-		val += fmt.Sprintf("%d", current.Val)
+		arr = append([]string{fmt.Sprintf("%d", current.Val)}, arr...)
 		current = current.Next
 	}
-	n, ok := n.SetString(val, 10)
-	if !ok {
-		panic(errors.New("the string is not a valid number"))
-	}
+	n, _ = n.SetString(strings.Join(arr, ""), 10)
 	return n
 }
 
