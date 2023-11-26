@@ -1,7 +1,10 @@
 package main
 
 import (
-	"problem-solving/linked_list"
+	// "problem-solving/linked_list"
+	"problem-solving/tools_scripts"
+
+	"github.com/joho/godotenv"
 )
 
 func main() {
@@ -9,7 +12,12 @@ func main() {
 	// 	log.Fatalln(err)
 	// }
 
-	linked_list.RunAddTwoNumbers()
+	if err := godotenv.Load(); err != nil {
+		panic(err)
+	}
+	tools_scripts.GetCustomerCards()
+	tools_scripts.GetCustomerPaymentMethods()
+	// linked_list.RunAddTwoNumbers()
 	// linked_list.RunHasCycle()
 	// linked_list.RunTestQueue()
 	// linked_list.Insertion()
