@@ -8,15 +8,19 @@ import (
 )
 
 func main() {
-	// if err := tools_scripts.StartWebhook(); err != nil {
-	// 	log.Fatalln(err)
-	// }
-
 	if err := godotenv.Load(); err != nil {
 		panic(err)
 	}
-	tools_scripts.GetCustomerCards()
-	tools_scripts.GetCustomerPaymentMethods()
+
+	// MazeSolver()
+
+	// if err := tools_scripts.StartWebhook(); err != nil {
+	// 	log.Fatalln(err)
+	// }
+	tools_scripts.BulkRemoveTogaiCustomers()
+
+	// tools_scripts.GetCustomerCards()
+	// tools_scripts.GetCustomerPaymentMethods()
 	// linked_list.RunAddTwoNumbers()
 	// linked_list.RunHasCycle()
 	// linked_list.RunTestQueue()
