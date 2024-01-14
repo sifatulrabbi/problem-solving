@@ -9,17 +9,31 @@ import (
 	"time"
 )
 
-func BulkRemoveTogaiCustomers() {
+func BulkRemoveTogaiCustomers(prod bool) {
 	customers := []string{}
-	togaiApiKey := os.Getenv("TOGAI_API_KEY")
-	if togaiApiKey == "" {
-		panic(errors.New("no togai api key found among the env vars"))
+
+	url := "https://sandbox-api.togai.com"
+	togaiApiKey := ""
+
+	if prod {
+		url = "https://api.togai.com"
+
+		togaiApiKey = os.Getenv("TOGAI_API_KEY_PROD")
+		if togaiApiKey == "" {
+			panic(errors.New("no togai api key for prod found among the env vars"))
+		}
+	} else {
+		togaiApiKey = os.Getenv("TOGAI_API_KEY")
+		if togaiApiKey == "" {
+			panic(errors.New("no togai api key found among the env vars"))
+		}
+	}
+
+	for _, cusId := range customers {
+		removeTogaiAccount(fmt.Sprintf("%s/accounts/%s", url, cusId), togaiApiKey)
 	}
 	for _, cusId := range customers {
-		removeTogaiAccount(cusId, togaiApiKey)
-	}
-	for _, cusId := range customers {
-		removeTogaiCustomer(cusId, togaiApiKey)
+		removeTogaiCustomer(fmt.Sprintf("%s/accounts/%s", url, cusId), togaiApiKey)
 	}
 }
 

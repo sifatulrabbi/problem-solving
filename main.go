@@ -1,9 +1,6 @@
 package main
 
 import (
-	// "problem-solving/linked_list"
-	"problem-solving/tools_scripts"
-
 	"github.com/joho/godotenv"
 )
 
@@ -17,9 +14,9 @@ func main() {
 	// if err := tools_scripts.StartWebhook(); err != nil {
 	// 	log.Fatalln(err)
 	// }
-	// tools_scripts.BulkRemoveTogaiCustomers()
+	// tools_scripts.BulkRemoveTogaiCustomers(true)
 
-	tools_scripts.RandomHttpTest()
+	// tools_scripts.RandomHttpTest()
 
 	// tools_scripts.GetCustomerCards()
 	// tools_scripts.GetCustomerPaymentMethods()

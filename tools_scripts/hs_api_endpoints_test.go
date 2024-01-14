@@ -15,6 +15,18 @@ import (
 	"github.com/joho/godotenv"
 )
 
+func TestAnthropicGeneration() {
+	payload := map[string]string{
+		"type":        "",
+		"target_lang": "",
+	}
+	bytesPayload, err := json.Marshal(payload)
+	if err != nil {
+		panic(err)
+	}
+	req, err := http.NewRequest(http.MethodPost, "http://localhost:3001/api/doc-v3/", bytes.NewReader(bytesPayload))
+}
+
 func TestActivatePlan(t *testing.T) {
 	accessToken, err := getAccessToken()
 	if err != nil {
