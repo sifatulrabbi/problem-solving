@@ -1,3 +1,3 @@
 run:
-	go run ./*.go
+	go run ./cmd/problem-solving/main.go
 .PHONY: run
