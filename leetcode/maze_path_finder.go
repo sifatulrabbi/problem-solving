@@ -1,4 +1,4 @@
-package main
+package leetcode
 
 var SampleMaze = []string{
 	"X", "X", "X", "E", "X",
@@ -30,5 +30,4 @@ func walk(maze []string, curr, start, end, wall, path string) bool {
 }
 
 func MazeSolver() {
-
 }

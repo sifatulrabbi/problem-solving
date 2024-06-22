@@ -1,4 +1,4 @@
-package main
+package leetcode
 
 func majorityElement(nums []int) int {
 	appearances := map[int]int{}

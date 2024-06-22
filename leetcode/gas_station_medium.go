@@ -1,4 +1,4 @@
-package solves
+package leetcode
 
 func canCompleteCircuit(gas []int, cost []int) int {
 	if len(gas) < 1 {

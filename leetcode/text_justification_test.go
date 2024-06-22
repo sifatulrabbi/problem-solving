@@ -1,4 +1,4 @@
-package solves
+package leetcode
 
 import "testing"
 

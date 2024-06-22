@@ -1,4 +1,4 @@
-package main
+package leetcode
 
 import (
 	"strings"
@@ -23,4 +23,3 @@ func trimStr(s rune) string {
 	}
 	return ""
 }
-
