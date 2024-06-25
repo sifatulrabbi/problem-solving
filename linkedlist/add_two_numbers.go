@@ -1,4 +1,4 @@
-package linked_list
+package linkedlist
 
 import (
 	"fmt"
@@ -6,11 +6,6 @@ import (
 	"strconv"
 	"strings"
 )
-
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
 
 func RunAddTwoNumbers() {
 	// testcase-1

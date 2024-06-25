@@ -1,23 +1,23 @@
-package linked_list
+package linkedlist
 
 import (
 	"fmt"
 	"log"
 )
 
-type Node[T comparable] struct {
+type LNode[T comparable] struct {
 	Val  T
-	Next *Node[T]
+	Next *LNode[T]
 }
 
 type Queue[T comparable] struct {
 	Length int
-	head   *Node[T]
-	tail   *Node[T]
+	head   *LNode[T]
+	tail   *LNode[T]
 }
 
 func (q *Queue[T]) Enqueue(item T) {
-	n := Node[T]{
+	n := LNode[T]{
 		Val:  item,
 		Next: nil,
 	}
