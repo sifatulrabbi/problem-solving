@@ -31,3 +31,18 @@ func longestConsecutive(nums []int) int {
 
 	return maxLen
 }
+
+// TODO:
+func longestPalindrome(s string) string {
+	if len(s) < 2 {
+		return s
+	}
+
+	p := ""
+	for i := 0; i < len(s); i++ {
+		initial := []byte{s[i]}
+		for j := i + 1; j < len(s); j++ {
+		}
+	}
+	return p
+}
