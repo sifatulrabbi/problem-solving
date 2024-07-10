@@ -32,16 +32,28 @@ func longestConsecutive(nums []int) int {
 	return maxLen
 }
 
-// TODO:
 func longestPalindrome(s string) string {
 	if len(s) < 2 {
 		return s
 	}
 
-	p := ""
+	p := string(s[0])
 	for i := 0; i < len(s); i++ {
 		initial := []byte{s[i]}
 		for j := i + 1; j < len(s); j++ {
+			initial = append(initial, s[j])
+
+			valid := true
+			for k := 0; k < len(initial); k++ {
+				if initial[k] != initial[len(initial)-1-k] {
+					valid = false
+					break
+				}
+			}
+
+			if valid && len(initial) > len(p) {
+				p = string(initial)
+			}
 		}
 	}
 	return p
