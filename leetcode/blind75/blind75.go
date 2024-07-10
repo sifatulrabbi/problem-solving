@@ -32,7 +32,7 @@ func longestConsecutive(nums []int) int {
 	return maxLen
 }
 
-func longestPalindrome(s string) string {
+func findPalindrome(s string) string {
 	if len(s) < 2 {
 		return s
 	}
@@ -57,4 +57,8 @@ func longestPalindrome(s string) string {
 		}
 	}
 	return p
+}
+
+func longestPlindrome(s string) string {
+	return findPalindrome(s)
 }
