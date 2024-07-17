@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"math"
 	"strconv"
-	"testing"
 )
 
 func plusMinus(arr []int32) {
@@ -24,10 +23,6 @@ func plusMinus(arr []int32) {
 	fmt.Printf("%.6f\n", float32(pos)/total)
 	fmt.Printf("%.6f\n", float32(neg)/total)
 	fmt.Printf("%.6f\n", float32(zero)/total)
-}
-
-func TestPlusMinusZeroRatio(t *testing.T) {
-	plusMinus([]int32{1, 1, 0, -1, -1})
 }
 
 func miniMaxSum(arr []int32) {
@@ -50,10 +45,6 @@ func miniMaxSum(arr []int32) {
 	fmt.Println(sum1, sum2)
 }
 
-func TestMiniMaxSum(t *testing.T) {
-	miniMaxSum([]int32{1, 3, 5, 7, 9})
-}
-
 func timeConversion(s string) string {
 	hr24 := "00"
 	_hr12, _ := strconv.ParseInt(s[:2], 10, 32)
@@ -72,13 +63,6 @@ func timeConversion(s string) string {
 		hr24 = fmt.Sprintf("%d", 12+hr12)
 	}
 	return fmt.Sprintf("%s:%s:%s", hr24, s[3:5], s[6:8])
-}
-
-func TestTimeConversion(t *testing.T) {
-	fmt.Println(timeConversion("12:01:00AM"))
-	fmt.Println(timeConversion("12:01:00PM"))
-	fmt.Println(timeConversion("07:05:45PM"))
-	fmt.Println(timeConversion("07:01:00AM"))
 }
 
 func findMedian(arr []int32) int32 {
@@ -124,4 +108,42 @@ func diagonalDifference(arr [][]int32) int32 {
 		rightToLeft += arr[i][r]
 	}
 	return int32(math.Abs(float64(leftToRight) - float64(rightToLeft)))
+}
+
+func countingSort(arr []int32) []int32 {
+	return arr
+}
+
+func flippingMatrix(matrix [][]int32) int32 {
+	length := len(matrix)
+
+	for col := 0; col < length; col++ {
+		if matrix[0][col] < matrix[length-1][col] {
+			colReverse(matrix, col)
+		}
+	}
+
+	var sum int32 = 0
+	for _, v := range matrix[0] {
+		sum += v
+	}
+	return sum
+}
+
+func rowReverse(matrix [][]int32, row int) {
+	l := len(matrix[0]) - 1
+	for j := 0; j < l/2; j++ {
+		matrix[row][j], matrix[row][l-j] = matrix[row][l-j], matrix[row][j]
+	}
+}
+
+func colReverse(matrix [][]int32, col int) {
+	l := len(matrix) - 1
+	for i := 0; i < l/2; i++ {
+		matrix[i][col], matrix[l-i][col] = matrix[l-i][col], matrix[i][col]
+	}
+}
+
+func findZigZagSquence(arr []int) {
+	k := (len(arr) + 1) / 2
 }
