@@ -2,6 +2,7 @@ package hackerrank
 
 import (
 	"fmt"
+	"math"
 	"strconv"
 	"testing"
 )
@@ -109,4 +110,18 @@ func lonelyinteger(a []int32) int32 {
 		}
 	}
 	return val
+}
+
+func diagonalDifference(arr [][]int32) int32 {
+	var (
+		sideWidth         = len(arr)
+		leftToRight int32 = 0
+		rightToLeft int32 = 0
+	)
+	for i := 0; i < sideWidth; i++ {
+		l, r := i, (sideWidth-1)-i
+		leftToRight += arr[i][l]
+		rightToLeft += arr[i][r]
+	}
+	return int32(math.Abs(float64(leftToRight) - float64(rightToLeft)))
 }
