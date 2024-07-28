@@ -8,5 +8,5 @@ class Solution:
 
 if __name__ == "__main__":
     s = Solution()
-    for v in [1, 2, 3, 4, 5, 6, 7]:
+    for v in [2, 4, 6]:
         print("n =", v, "result =", s.generateParenthesis(v))
